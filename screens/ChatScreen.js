@@ -2,17 +2,29 @@ import React, { useState } from 'react';
 import { View, TextInput, Button, FlatList, Text, KeyboardAvoidingView, Platform, SafeAreaView, StyleSheet } from 'react-native';
 
 const ChatScreen = () => {
+  //setting our initial state for messages/chat messages
   const [message, setMessage] = useState('');
   const [chatMessages, setChatMessages] = useState([]);
 
+  //handler for messages/chat messages
   const handleSendMessage = () => {
-    if (message.trim() !== '') {
-      setChatMessages([...chatMessages, message]);
+    //ensures that only non-empty messages are sent and added to the chat.
+    if (message !== '') {
+      const timestamp = new Date().toLocaleString();
+      const newMessage = {
+        content: message,
+        timestamp: timestamp,
+        sender: 'user', // 'user' indicates messages sent by the user
+      };
+      setChatMessages((prevMessages) => [...prevMessages, newMessage]);
       setMessage('');
     }
   };
 
   return (
+    //SafeAreaView render content within the safe area boundaries of a device.
+    // KeyboardAvoidingView will automatically adjust its height, position, or bottom padding based on the keyboard height to remain visible while the virtual keyboard is displayed.
+    // View container that supports layout with flexbox, style, some touch handling, and accessibility controls.
     <SafeAreaView style={styles.container}>
       <KeyboardAvoidingView
         style={{ flex: 1 }}
@@ -21,11 +33,23 @@ const ChatScreen = () => {
         <View style={styles.chatContainer}>
           <FlatList
             data={chatMessages}
-            renderItem={({ item }) => <Text>{item}</Text>}
+            renderItem={({ item }) => (
+              <View style={[styles.messageContainer, item.sender === 'user' ? styles.userMessageContainer : styles.otherMessageContainer]}>
+                <View>
+                  <Text style={styles.messageText}>{item.content}</Text>
+                </View>
+                <View style={styles.timestampContainer}>
+                  <Text style={styles.timestampText}>{item.timestamp}</Text>
+                </View>
+              </View>
+            )}
             keyExtractor={(item, index) => index.toString()}
             style={styles.chatList}
             contentContainerStyle={styles.chatListContent}
           />
+          <View>
+            
+          </View>
           <View style={styles.inputContainer}>
             <TextInput
               style={styles.input}
@@ -42,6 +66,32 @@ const ChatScreen = () => {
 };
 
 const styles = StyleSheet.create({
+
+  timestampContainer: {
+    marginTop: 8,
+  },
+  userMessageContainer: {
+    alignSelf: 'flex-end',
+    backgroundColor: '#DCF8C6',
+    borderRadius: 8,
+    marginRight: 10,
+  },
+  otherMessageContainer: {
+    alignSelf: 'flex-start',
+    backgroundColor: '#F5F5F5',
+    marginLeft: 10,
+  },
+  messageContainer: {
+    marginVertical: 8,
+  },
+  messageText: {
+    fontSize: 16,
+    marginBottom: 4,
+  },
+  timestampText: {
+    fontSize: 12,
+    color: '#888',
+  },
   container: {
     flex: 1,
   },
@@ -56,6 +106,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   chatListContent: {
+    backgroundColor: '#ccc',
     flexGrow: 1,
     justifyContent: 'flex-end',
   },
