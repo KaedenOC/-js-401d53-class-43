@@ -1,14 +1,21 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import ChatScreen from './screens/ChatScreen';
 
 const App = () => {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.container}>
       <ChatScreen />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'black',
+  },
+});
 
 export default App;
 

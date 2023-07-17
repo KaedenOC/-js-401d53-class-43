@@ -56,6 +56,7 @@ const ChatScreen = () => {
               value={message}
               onChangeText={(text) => setMessage(text)}
               placeholder="Type your message"
+              placeholderTextColor="#888888"
             />
             <Button title="Send" onPress={handleSendMessage} />
           </View>
@@ -106,7 +107,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   chatListContent: {
-    backgroundColor: '#ccc',
+    // backgroundColor: '#ccc',
     flexGrow: 1,
     justifyContent: 'flex-end',
   },
@@ -124,7 +125,7 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
     borderWidth: 1,
     borderColor: '#ccc',
-    borderRadius: 4,
+    borderRadius: 8,
   },
 });
 
