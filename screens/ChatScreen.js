@@ -73,14 +73,14 @@ const styles = StyleSheet.create({
   },
   userMessageContainer: {
     alignSelf: 'flex-end',
-    backgroundColor: '#DCF8C6',
+    backgroundColor: '#6495ED',
     borderRadius: 8,
-    marginRight: 10,
+    // marginRight: 10,
   },
   otherMessageContainer: {
     alignSelf: 'flex-start',
     backgroundColor: '#F5F5F5',
-    marginLeft: 10,
+    // marginLeft: 10,
   },
   messageContainer: {
     marginVertical: 8,
@@ -88,10 +88,11 @@ const styles = StyleSheet.create({
   messageText: {
     fontSize: 16,
     marginBottom: 4,
+    color: 'white',
   },
   timestampText: {
     fontSize: 12,
-    color: '#888',
+    color: 'white',
   },
   container: {
     flex: 1,
@@ -119,13 +120,14 @@ const styles = StyleSheet.create({
     paddingTop: 8,
   },
   input: {
+    height: 40,
     flex: 1,
     marginRight: 8,
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderWidth: 1,
     borderColor: '#ccc',
-    borderRadius: 8,
+    borderRadius: 15,
   },
 });
 
