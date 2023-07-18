@@ -35,11 +35,11 @@ const ChatScreen = () => {
             data={chatMessages}
             renderItem={({ item }) => (
               <View style={[styles.messageContainer, item.sender === 'user' ? styles.userMessageContainer : styles.otherMessageContainer]}>
-                <View>
-                  <Text style={styles.messageText}>{item.content}</Text>
-                </View>
                 <View style={styles.timestampContainer}>
                   <Text style={styles.timestampText}>{item.timestamp}</Text>
+                </View>
+                <View>
+                  <Text style={styles.messageText}>{item.content}</Text>
                 </View>
               </View>
             )}
@@ -47,9 +47,6 @@ const ChatScreen = () => {
             style={styles.chatList}
             contentContainerStyle={styles.chatListContent}
           />
-          <View>
-            
-          </View>
           <View style={styles.inputContainer}>
             <TextInput
               style={styles.input}
@@ -128,6 +125,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 15,
+    color: 'white',
   },
 });
 
