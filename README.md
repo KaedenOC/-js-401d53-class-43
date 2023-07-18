@@ -25,3 +25,11 @@ Ethan Storm
 - `npm i @expo/ngrok@^4.1.0`
 - `npx expo start --tunnel`
 - scan QR code
+
+## Screenshots
+
+- Phase 1:
+
+![SS1](./assets/lab431.PNG)
+
+![SS2](./assets/lab432.PNG)
