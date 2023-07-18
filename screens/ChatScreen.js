@@ -26,10 +26,10 @@ const ChatScreen = () => {
     // KeyboardAvoidingView will automatically adjust its height, position, or bottom padding based on the keyboard height to remain visible while the virtual keyboard is displayed.
     // View container that supports layout with flexbox, style, some touch handling, and accessibility controls.
     <SafeAreaView style={styles.container}>
-      <KeyboardAvoidingView
-        style={{ flex: 1 }}
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-      >
+      {/* <KeyboardAvoidingView
+        style={styles.container}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      > */}
         <View style={styles.chatContainer}>
           <FlatList
             data={chatMessages}
@@ -58,7 +58,7 @@ const ChatScreen = () => {
             <Button title="Send" onPress={handleSendMessage} />
           </View>
         </View>
-      </KeyboardAvoidingView>
+      {/* </KeyboardAvoidingView> */}
     </SafeAreaView>
   );
 };
