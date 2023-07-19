@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, FlatList, Text, KeyboardAvoidingView, Platform, SafeAreaView, StyleSheet } from 'react-native';
+import { View, TextInput, Button, FlatList, Text, SafeAreaView, StyleSheet } from 'react-native';
 
 const ChatScreen = () => {
   //setting our initial state for messages/chat messages
@@ -100,6 +100,7 @@ const styles = StyleSheet.create({
     alignItems: 'stretch',
     paddingHorizontal: 16,
     paddingBottom: 16,
+    backgroundColor: 'black',
   },
   chatList: {
     flex: 1,
