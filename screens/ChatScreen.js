@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, FlatList, Text, KeyboardAvoidingView, Platform, SafeAreaView, StyleSheet } from 'react-native';
+import { View, TextInput, Button, FlatList, Text, SafeAreaView, StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
 
 const ChatScreen = () => {
   //setting our initial state for messages/chat messages
@@ -26,10 +26,10 @@ const ChatScreen = () => {
     // KeyboardAvoidingView will automatically adjust its height, position, or bottom padding based on the keyboard height to remain visible while the virtual keyboard is displayed.
     // View container that supports layout with flexbox, style, some touch handling, and accessibility controls.
     <SafeAreaView style={styles.container}>
-      {/* <KeyboardAvoidingView
+      <KeyboardAvoidingView
         style={styles.container}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      > */}
+      >
         <View style={styles.chatContainer}>
           <FlatList
             data={chatMessages}
@@ -58,7 +58,7 @@ const ChatScreen = () => {
             <Button title="Send" onPress={handleSendMessage} />
           </View>
         </View>
-      {/* </KeyboardAvoidingView> */}
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 };
@@ -100,6 +100,7 @@ const styles = StyleSheet.create({
     alignItems: 'stretch',
     paddingHorizontal: 16,
     paddingBottom: 16,
+    backgroundColor: 'black',
   },
   chatList: {
     flex: 1,
