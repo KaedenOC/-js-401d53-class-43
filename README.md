@@ -11,6 +11,11 @@
 - As a user I would like to be able to see my messages as I type them into the text box.
 - As a user I would like to be able to chat with another user. (backend implementation soon)
 
+- **Phase 2** Adding login screen before the chatScreen.
+
+- As a user I would like to see a login screen
+- As a user I would like to be able to go back to the login screen.
+
 ## Links and Resources
 
 ## Collaborators
@@ -37,3 +42,9 @@ Ethan Storm
 ![SS1](./assets/lab431.PNG)
 
 ![SS2](./assets/lab432.PNG)
+
+- Phase 2:
+
+![SS3](./assets/lab441.PNG)
+
+![SS4](./assets/lab442.PNG)
